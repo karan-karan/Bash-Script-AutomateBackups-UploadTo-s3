@@ -105,7 +105,7 @@ The script includes checks for:
 
 Local backups older than 7 days are automatically removed to prevent disk space issues.
 
-### Must know details:
+## Must know details
 
 Create an IAM Role for EC2 S3 Access
 
