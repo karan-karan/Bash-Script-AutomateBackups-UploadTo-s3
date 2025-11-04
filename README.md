@@ -21,8 +21,8 @@ This Bash script automates the process of creating backups and uploading them to
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/automated-s3-backup.git
-cd automated-s3-backup
+git clone https://github.com/karan-karan/Bash-Script-AutomateBackups-UploadTo-s3.git
+cd Bash-Script-AutomateBackups-UploadTo-s3
 ```
 
 2. Make the script executable:
