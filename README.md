@@ -55,6 +55,13 @@ The script will:
 
 ### Automated Execution with Crontab
 
+To automate the backup process, you can set up a cron job:
+
+1. Open your crontab configuration:
+```bash
+crontab -e
+```
+
 2. Add one of these example schedules:
 ```bash
 # Run daily at 2 AM
@@ -62,6 +69,10 @@ The script will:
 
 # Run weekly on Sunday at 3 AM
 0 3 * * 0 /full/path/to/Backup\&upload.sh
+
+# Run monthly on the 1st at 4 AM
+0 4 1 * * /full/path/to/Backup\&upload.sh
+```
 
 Make sure to use the full absolute path to the script in your crontab entry.
 
@@ -80,6 +91,8 @@ To view your current cron jobs:
 ```bash
 crontab -l
 ```
+
+Note: The script's output will be sent to the system mail by default. You might want to add logging to the script if you need to track its execution.
 
 ## Error Handling
 
