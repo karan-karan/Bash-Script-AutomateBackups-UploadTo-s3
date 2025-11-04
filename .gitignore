@@ -1,0 +1,26 @@
+# AWS credentials
+.aws/
+aws.credentials
+
+# Backup files
+*.tar.gz
+*.zip
+*.bak
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
