@@ -109,32 +109,25 @@ Local backups older than 7 days are automatically removed to prevent disk space 
 
 Create an IAM Role for EC2 S3 Access
 
-```
 To allow your EC2 instance to upload backups to S3 securely, you should use an IAM Role instead of embedding AWS credentials. This is more secure and recommended for production.
 Steps:
 - Go to IAM Roles in AWS Console
 - Click Create Role → Select AWS Service → EC2 → Next
 - Attach the policy AmazonS3FullAccess (or a custom policy with access to your specific bucket)
 - Give your role a name (e.g., EC2S3BackupRole) and create it
-
 Using an IAM Role ensures your EC2 instance automatically has the required permissions to access S3, without storing keys on the instance.
-```
 
 Attach IAM Role to EC2 Instance
-
 - Navigate to EC2 → Instances → Select your instance
 - Click Actions → Security → Modify IAM Role
 - Select the role you created (EC2S3BackupRole) → Update
 - Once attached, the EC2 instance can access S3 directly using the role. No AWS keys or aws configure setup is needed.
 
 S3 Lifecycle Rules for Automatic Cleanup
-
 Instead of manually deleting old backups from S3 in the script, you can configure Lifecycle Rules in your S3 bucket:
-
 - Go to S3 → Your Bucket → Management → Lifecycle Rules
 - Create a rule to delete objects older than X days (e.g., 7 days)
 - Save the rule
-
 This approach is simpler and more reliable, as it automatically cleans up old backups without modifying the script.
 
 ## License
