@@ -52,6 +52,8 @@ The script will:
 1. Create a timestamped backup of your source directory
 2. Upload the backup to your specified S3 bucket
 3. Remove local backups older than 7 days
+<img width="740" height="92" alt="image" src="https://github.com/user-attachments/assets/74271370-5a02-441e-8cf4-cbc27f75dc30" />
+
 
 ### Automated Execution with Crontab
 
