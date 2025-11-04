@@ -42,6 +42,7 @@ S3_BUCKET="s3://s3-bashscript-bucket" # Your S3 bucket name
 
 ## Usage
 
+### Manual Execution
 Simply run the script:
 ```bash
 ./Backup\&upload.sh
@@ -51,6 +52,34 @@ The script will:
 1. Create a timestamped backup of your source directory
 2. Upload the backup to your specified S3 bucket
 3. Remove local backups older than 7 days
+
+### Automated Execution with Crontab
+
+2. Add one of these example schedules:
+```bash
+# Run daily at 2 AM
+0 2 * * * /full/path/to/Backup\&upload.sh
+
+# Run weekly on Sunday at 3 AM
+0 3 * * 0 /full/path/to/Backup\&upload.sh
+
+Make sure to use the full absolute path to the script in your crontab entry.
+
+#### Crontab Format Explanation
+```
+* * * * * command
+│ │ │ │ │
+│ │ │ │ └─── Day of the week (0-6, 0 is Sunday)
+│ │ │ └───── Month (1-12)
+│ │ └─────── Day of the month (1-31)
+│ └───────── Hour (0-23)
+└─────────── Minute (0-59)
+```
+
+To view your current cron jobs:
+```bash
+crontab -l
+```
 
 ## Error Handling
 
